@@ -1,0 +1,103 @@
+:root {
+    --O-color: #2D2926FF;
+    --X-color: #E94B3CFF;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'helvetica';
+    height: 100vh;
+    background-color: rgb(231, 231, 231);
+}
+
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 10rem);
+    grid-template-rows: repeat(3, 7.5rem);
+    gap: 1rem;
+}
+
+.board.game-over {
+    opacity: 0.8;
+}
+
+.cell {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.836);
+    border-radius: .5rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    font-size: 2rem;
+    
+}
+
+.cell:not(.O):not(.X):hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.game-over .cell:not(.O):not(.X):hover {
+    box-shadow: none;
+}
+
+.cell.O, .cell.X , .game-over .cell {
+    cursor: not-allowed;
+}
+
+.cell.O {
+    background-color: var(--O-color);
+}
+
+.cell.X {
+    background-color: var(--X-color);
+}
+
+footer {
+    text-align: center;
+}
+
+.WinningMsg {
+    margin: 1rem;
+}
+
+.WinningMsg span.O {
+    color: var(--O-color);
+}
+
+.WinningMsg span.X {
+    color: var(--X-color);
+}
+
+button {
+    border: 2px solid rgb(51, 52, 66);
+    margin: 0 0 2rem;
+    padding: .5rem;
+    font-size: .7rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: rgb(51, 52, 66);
+    font-weight: 800;
+}
+
+button:hover {
+    font-size: .8rem;
+    transition: ease .5s;
+}
+
+
+.title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
